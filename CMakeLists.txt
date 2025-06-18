@@ -63,6 +63,10 @@ OPTION(ENABLE_X3FTOOLS             "Build library with Foveon X3F support       
 option(LIBRAW_INSTALL              "Generate the install target."                                    ${MASTER_PROJECT})
 option(LIBRAW_UNINSTALL_TARGET     "Add a custom target to ease removal of installed targets"        ${MASTER_PROJECT})
 
+IF(WIN32 AND BUILD_SHARED_LIBS)
+    ADD_DEFINITIONS(-DLIBRAW_BUILDLIB)
+ENDIF()
+
 # ==================================================================================================
 # General definitions rules
 
